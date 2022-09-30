@@ -1,21 +1,20 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { DistanceCalculatorService } from './generated';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-
-  constructor(private httpClient: HttpClient) {
-    
-  }
+  constructor(private distanceCalculatorService: DistanceCalculatorService) {}
   title = 'DistanceCalculator';
 
   ngOnInit(): void {
-    this.httpClient.get("https://localhost:7248/WeatherForecast").subscribe(result => {
-      console.log(result);
-    })
+    this.distanceCalculatorService
+      .distanceCalculatorGet()
+      .subscribe(result => {
+        console.log(result);
+      });
   }
 }
