@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "DistanceCalculator", "DistanceCalculator\DistanceCalculator.esproj", "{A1623943-3F4B-4EED-A9C9-B1B06A946A07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{95229FBD-DCB6-4A59-B56A-3493FC29A604}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{C1BFB5D5-2B13-46D4-8E7C-E4471AA4F91D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.API", "DistanceCalculator.API\DistanceCalculator.API.csproj", "{1E8962C0-BFC4-426D-92E6-A93869698924}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1623943-3F4B-4EED-A9C9-B1B06A946A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1623943-3F4B-4EED-A9C9-B1B06A946A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1623943-3F4B-4EED-A9C9-B1B06A946A07}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A1623943-3F4B-4EED-A9C9-B1B06A946A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1623943-3F4B-4EED-A9C9-B1B06A946A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1623943-3F4B-4EED-A9C9-B1B06A946A07}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1E8962C0-BFC4-426D-92E6-A93869698924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8962C0-BFC4-426D-92E6-A93869698924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8962C0-BFC4-426D-92E6-A93869698924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8962C0-BFC4-426D-92E6-A93869698924}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A1623943-3F4B-4EED-A9C9-B1B06A946A07} = {95229FBD-DCB6-4A59-B56A-3493FC29A604}
+		{1E8962C0-BFC4-426D-92E6-A93869698924} = {C1BFB5D5-2B13-46D4-8E7C-E4471AA4F91D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BF367EA-C126-44CD-B4FF-A372BEDDD173}
+	EndGlobalSection
+EndGlobal
