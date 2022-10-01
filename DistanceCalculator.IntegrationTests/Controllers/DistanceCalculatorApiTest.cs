@@ -1,6 +1,7 @@
 using DistanceCalculator.Core.Commands;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.WebUtilities;
+using System.Net;
 
 namespace DistanceCalculator.IntegrationTests.Controllers
 {
@@ -35,7 +36,7 @@ namespace DistanceCalculator.IntegrationTests.Controllers
 
         [Theory]
         [InlineData("DistanceCalculator")]
-        public async Task Get_EndpointReturnsError(string url)
+        public async Task Get_InvalidCommand_EndpointReturnsBadRequest(string url)
         {
             var queryParams = new Dictionary<string, string?>()
             {
@@ -50,7 +51,27 @@ namespace DistanceCalculator.IntegrationTests.Controllers
 
             var response = await client.GetAsync(requestUrl);
 
-            Assert.False(response.IsSuccessStatusCode);
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+        }
+
+        [Theory]
+        [InlineData("DistanceCalculator")]
+        public async Task Get_ServiceValidationError_EndpointReturnsBadRequest(string url)
+        {
+            var queryParams = new Dictionary<string, string?>()
+            {
+                { "coordinatesStart", "a,-6.372663" },
+                { "coordinatesEnd", "41.385101, -81.440440" },
+                { "radius", "6371" },
+            };
+
+            var requestUrl = QueryHelpers.AddQueryString(url, queryParams);
+
+            var client = _factory.CreateClient();
+
+            var response = await client.GetAsync(requestUrl);
+
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         }
     }
 }

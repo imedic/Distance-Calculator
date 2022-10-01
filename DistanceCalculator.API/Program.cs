@@ -1,5 +1,6 @@
 using DistanceCalculator.API.Filters;
 using DistanceCalculator.Core;
+using Serilog;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,8 @@ builder.Services.AddControllers(options =>
 {
     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
+
+builder.Host.UseSerilog((builderContext, config) => config.WriteTo.Console().ReadFrom.Configuration(builderContext.Configuration));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

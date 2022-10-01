@@ -1,6 +1,7 @@
 ﻿using DistanceCalculator.Core.Commands;
 using DistanceCalculator.Core.Contracts;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace DistanceCalculator.API.Controllers;
 
@@ -21,5 +22,4 @@ public class DistanceCalculatorController
     {
         return _service.CalculateDistance(command);
     }
-
 }
