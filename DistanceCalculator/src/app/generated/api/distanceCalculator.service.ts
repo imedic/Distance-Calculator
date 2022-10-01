@@ -90,13 +90,36 @@ export class DistanceCalculatorService {
     }
 
     /**
+     * @param coordinatesStart 
+     * @param coordinatesEnd 
+     * @param radius 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public distanceCalculatorGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<number>;
-    public distanceCalculatorGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<HttpResponse<number>>;
-    public distanceCalculatorGet(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<HttpEvent<number>>;
-    public distanceCalculatorGet(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<any> {
+    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<number>;
+    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<HttpResponse<number>>;
+    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<HttpEvent<number>>;
+    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<any> {
+        if (coordinatesStart === null || coordinatesStart === undefined) {
+            throw new Error('Required parameter coordinatesStart was null or undefined when calling distanceCalculatorGet.');
+        }
+        if (coordinatesEnd === null || coordinatesEnd === undefined) {
+            throw new Error('Required parameter coordinatesEnd was null or undefined when calling distanceCalculatorGet.');
+        }
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        if (coordinatesStart !== undefined && coordinatesStart !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>coordinatesStart, 'CoordinatesStart');
+        }
+        if (coordinatesEnd !== undefined && coordinatesEnd !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>coordinatesEnd, 'CoordinatesEnd');
+        }
+        if (radius !== undefined && radius !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>radius, 'Radius');
+        }
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -135,6 +158,7 @@ export class DistanceCalculatorService {
         return this.httpClient.request<number>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

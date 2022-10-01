@@ -3,7 +3,6 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 import { DistanceCalculatorService } from './api/distanceCalculator.service';
-import { WeatherForecastService } from './api/weatherForecast.service';
 
 @NgModule({
   imports:      [],

@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.distanceCalculatorService
-      .distanceCalculatorGet()
+      .distanceCalculatorGet("53.297975, -6.372663", "41.385101, -81.440440", 6371)
       .subscribe(result => {
         console.log(result);
       });

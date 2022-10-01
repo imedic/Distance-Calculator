@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DistanceCalculator.Core.Commands;
+using DistanceCalculator.Core.Contracts;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DistanceCalculator.API.Controllers;
 
@@ -6,10 +8,18 @@ namespace DistanceCalculator.API.Controllers;
 [Route("[controller]")]
 public class DistanceCalculatorController
 {
-    [HttpGet()]
-    public int GetDistance()
+    private readonly IDistanceService _service;
+
+    public DistanceCalculatorController(IDistanceService service)
     {
-        return 5;
+        _service = service;
+    }
+
+
+    [HttpGet()]
+    public double GetDistance([FromQuery] DistanceCommand command)
+    {
+        return _service.CalculateDistance(command);
     }
 
 }
