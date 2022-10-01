@@ -34,6 +34,20 @@
               "type": "number",
               "format": "double"
             }
+          },
+          {
+            "name": "Formula",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Formula"
+            }
+          },
+          {
+            "name": "MeasuringUnit",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/MeasuringUnit"
+            }
           }
         ],
         "responses": {
@@ -64,5 +78,27 @@
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "Formula": {
+        "enum": [
+          "CosineLaw",
+          "Pythagora"
+        ],
+        "type": "string"
+      },
+      "MeasuringUnit": {
+        "enum": [
+          "Meter",
+          "Kilometer",
+          "Inch",
+          "Foot",
+          "Yard",
+          "Mile",
+          "NauticalMile"
+        ],
+        "type": "string"
+      }
+    }
+  }
 }

@@ -2,7 +2,7 @@ using DistanceCalculator.Core.Commands;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.WebUtilities;
 
-namespace DistanceCalculator.IntegrationTests
+namespace DistanceCalculator.IntegrationTests.Controllers
 {
     public class DistanceCalculatorApiTest : IClassFixture<WebApplicationFactory<Program>>
     {

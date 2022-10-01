@@ -18,6 +18,10 @@ import { HttpClient, HttpHeaders, HttpParams,
 import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
+// @ts-ignore
+import { Formula } from '../model/formula';
+// @ts-ignore
+import { MeasuringUnit } from '../model/measuringUnit';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -93,13 +97,15 @@ export class DistanceCalculatorService {
      * @param coordinatesStart 
      * @param coordinatesEnd 
      * @param radius 
+     * @param formula 
+     * @param measuringUnit 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<number>;
-    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<HttpResponse<number>>;
-    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<HttpEvent<number>>;
-    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<any> {
+    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, formula?: Formula, measuringUnit?: MeasuringUnit, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<number>;
+    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, formula?: Formula, measuringUnit?: MeasuringUnit, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<HttpResponse<number>>;
+    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, formula?: Formula, measuringUnit?: MeasuringUnit, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<HttpEvent<number>>;
+    public distanceCalculatorGet(coordinatesStart: string, coordinatesEnd: string, radius?: number, formula?: Formula, measuringUnit?: MeasuringUnit, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext}): Observable<any> {
         if (coordinatesStart === null || coordinatesStart === undefined) {
             throw new Error('Required parameter coordinatesStart was null or undefined when calling distanceCalculatorGet.');
         }
@@ -119,6 +125,14 @@ export class DistanceCalculatorService {
         if (radius !== undefined && radius !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
             <any>radius, 'Radius');
+        }
+        if (formula !== undefined && formula !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>formula, 'Formula');
+        }
+        if (measuringUnit !== undefined && measuringUnit !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>measuringUnit, 'MeasuringUnit');
         }
 
         let localVarHeaders = this.defaultHeaders;
