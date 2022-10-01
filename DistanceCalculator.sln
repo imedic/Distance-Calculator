@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.API", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.Core", "DistanceCalculator.Core\DistanceCalculator.Core.csproj", "{879DE97F-7AC9-4771-B6E9-E5CD99120208}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.UnitTests", "DistanceCalculator.UnitTests\DistanceCalculator.UnitTests.csproj", "{4D0EF864-B88D-471F-953D-0EF2C61B15F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceCalculator.IntegrationTests", "DistanceCalculator.IntegrationTests\DistanceCalculator.IntegrationTests.csproj", "{BFA62E5F-B18C-432D-844C-47335870C0EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{77862E5A-241B-4773-9558-A0A903EFDC40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,14 @@ Global
 		{879DE97F-7AC9-4771-B6E9-E5CD99120208}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{879DE97F-7AC9-4771-B6E9-E5CD99120208}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{879DE97F-7AC9-4771-B6E9-E5CD99120208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D0EF864-B88D-471F-953D-0EF2C61B15F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D0EF864-B88D-471F-953D-0EF2C61B15F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D0EF864-B88D-471F-953D-0EF2C61B15F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D0EF864-B88D-471F-953D-0EF2C61B15F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA62E5F-B18C-432D-844C-47335870C0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA62E5F-B18C-432D-844C-47335870C0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA62E5F-B18C-432D-844C-47335870C0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA62E5F-B18C-432D-844C-47335870C0EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +55,9 @@ Global
 		{A1623943-3F4B-4EED-A9C9-B1B06A946A07} = {95229FBD-DCB6-4A59-B56A-3493FC29A604}
 		{1E8962C0-BFC4-426D-92E6-A93869698924} = {C1BFB5D5-2B13-46D4-8E7C-E4471AA4F91D}
 		{879DE97F-7AC9-4771-B6E9-E5CD99120208} = {C1BFB5D5-2B13-46D4-8E7C-E4471AA4F91D}
+		{4D0EF864-B88D-471F-953D-0EF2C61B15F5} = {77862E5A-241B-4773-9558-A0A903EFDC40}
+		{BFA62E5F-B18C-432D-844C-47335870C0EB} = {77862E5A-241B-4773-9558-A0A903EFDC40}
+		{77862E5A-241B-4773-9558-A0A903EFDC40} = {C1BFB5D5-2B13-46D4-8E7C-E4471AA4F91D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BF367EA-C126-44CD-B4FF-A372BEDDD173}

@@ -33,3 +33,5 @@ app.UseCors(x =>
     .SetIsOriginAllowed(origin => true));
 
 app.Run();
+
+public partial class Program { }
