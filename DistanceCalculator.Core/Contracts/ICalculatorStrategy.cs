@@ -3,7 +3,7 @@ using DistanceCalculator.Core.ValueObjects;
 
 namespace DistanceCalculator.Core.Contracts;
 
-public interface ICalculatorStrategy
+public interface ICalculator
 {
     Formula Formula{ get; }
 

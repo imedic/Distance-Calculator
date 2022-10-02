@@ -10,8 +10,9 @@ public static class IocModule
 {
     public static IServiceCollection RegisterServices(this IServiceCollection collection)
     {
-        collection.AddScoped<ICalculatorStrategy, CosineLawCalculatorStrategy>();
-        collection.AddScoped<ICalculatorStrategy, PythagoraCalculatorStrategy>();
+        collection.AddScoped<ICalculator, CosineLawCalculator>();
+        collection.AddScoped<ICalculator, PythagoraCalculator>();
+        collection.AddScoped<ICalculator, HaversineCalculator>();
         collection.AddScoped<ICalculatorContext, CalculatorContext>();
         collection.AddScoped<IConverterService, ConverterService>();
         collection.AddScoped<IDistanceService, DistanceService>();

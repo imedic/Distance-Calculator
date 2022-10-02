@@ -83,7 +83,8 @@
       "Formula": {
         "enum": [
           "CosineLaw",
-          "Pythagora"
+          "Pythagora",
+          "Haversine"
         ],
         "type": "string"
       },

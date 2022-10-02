@@ -11,10 +11,11 @@
  */
 
 
-export type Formula = 'CosineLaw' | 'Pythagora';
+export type Formula = 'CosineLaw' | 'Pythagora' | 'Haversine';
 
 export const Formula = {
     CosineLaw: 'CosineLaw' as Formula,
-    Pythagora: 'Pythagora' as Formula
+    Pythagora: 'Pythagora' as Formula,
+    Haversine: 'Haversine' as Formula
 };
 

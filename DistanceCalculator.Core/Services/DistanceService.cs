@@ -23,7 +23,7 @@ public class DistanceService : IDistanceService
         var start = new Coordinates(command.CoordinatesStart);
         var end = new Coordinates(command.CoordinatesEnd);
 
-        _calculatorContext.SetStrategy(command.Formula);
+        _calculatorContext.SetFormula(command.Formula);
         var result = _calculatorContext.Calculate(start, end, command.Radius);
 
         return _converterService.Convert(result, command.MeasuringUnit);

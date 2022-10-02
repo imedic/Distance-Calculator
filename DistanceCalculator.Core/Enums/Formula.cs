@@ -6,4 +6,5 @@ public enum Formula
 {
     CosineLaw,
     Pythagora,
+    Haversine
 }
