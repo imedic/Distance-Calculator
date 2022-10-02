@@ -10,6 +10,6 @@ public class ExtensionsTest
         double degree = 180;
         double expectedRad = Math.PI;
 
-        Assert.Equal(degree.ToRad(), expectedRad);
+        Assert.Equal(expectedRad, degree.ToRad());
     }
 }

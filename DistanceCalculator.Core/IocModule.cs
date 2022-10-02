@@ -15,6 +15,7 @@ public static class IocModule
         collection.AddScoped<ICalculator, HaversineCalculator>();
         collection.AddScoped<ICalculatorContext, CalculatorContext>();
         collection.AddScoped<IConverterService, ConverterService>();
+        collection.AddScoped<ICoordinatesParseService, CoordinatesParseService>();
         collection.AddScoped<IDistanceService, DistanceService>();
 
         return collection;

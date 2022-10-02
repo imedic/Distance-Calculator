@@ -1,27 +1,25 @@
-﻿using DistanceCalculator.Core.Calculators;
-using DistanceCalculator.Core.Commands;
+﻿using DistanceCalculator.Core.Commands;
 using DistanceCalculator.Core.Contracts;
-using DistanceCalculator.Core.Enums;
-using DistanceCalculator.Core.Factories;
-using DistanceCalculator.Core.ValueObjects;
 
 namespace DistanceCalculator.Core.Services;
 
 public class DistanceService : IDistanceService
 {
+    private readonly ICoordinatesParseService _coordinatesParseService;
     private readonly ICalculatorContext _calculatorContext;
     private readonly IConverterService _converterService;
 
-    public DistanceService(ICalculatorContext calculatorContext, IConverterService converterService)
+    public DistanceService(ICoordinatesParseService coordinatesParseService, ICalculatorContext calculatorContext, IConverterService converterService)
     {
+        _coordinatesParseService = coordinatesParseService;
         _calculatorContext = calculatorContext;
         _converterService = converterService;
     }
 
     public double CalculateDistance(DistanceCommand command)
     {
-        var start = new Coordinates(command.CoordinatesStart);
-        var end = new Coordinates(command.CoordinatesEnd);
+        var start = _coordinatesParseService.Parse(command.CoordinatesStart);
+        var end = _coordinatesParseService.Parse(command.CoordinatesEnd);
 
         _calculatorContext.SetFormula(command.Formula);
         var result = _calculatorContext.Calculate(start, end, command.Radius);

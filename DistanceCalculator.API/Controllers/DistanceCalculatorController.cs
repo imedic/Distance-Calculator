@@ -16,7 +16,6 @@ public class DistanceCalculatorController
         _service = service;
     }
 
-
     [HttpGet()]
     public double GetDistance([FromQuery] DistanceCommand command)
     {
