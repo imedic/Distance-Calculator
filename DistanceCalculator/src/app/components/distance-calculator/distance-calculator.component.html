@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="container__left">
+        <h1>Distance calculator</h1>
+        <p class="description">Calculate distance between two coordinates on a spherical plane</p>
+        <app-calculator-form [form]="form"></app-calculator-form>
+        <button type="button"
+                (click)="calculateDistance()">Calculate Distance</button>
+
+        <p *ngIf="distance">Distance: {{ distance }}</p>
+        <p *ngIf="error">{{ error }}</p>
+    </div>
+    <div class="container__right">
+        <app-sphere-graphic></app-sphere-graphic>
+    </div>
+</div>

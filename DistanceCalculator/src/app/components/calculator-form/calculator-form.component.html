@@ -1,0 +1,47 @@
+<form [formGroup]="form">
+    <div class="form-control">
+        <label for="startCoordinates">Start Coordinates:</label>
+        <input type="text"
+               name="startCoordinates"
+               formControlName="startCoordinates"
+               id="startCoordinates">
+    </div>
+    <div class="form-control">
+        <label for="endCoordinates">End Coordinates:</label>
+        <input type="text"
+               name="endCoordinates"
+               formControlName="endCoordinates"
+               id="endCoordinates">
+    </div>
+    <div class="form-control">
+        <label for="radius">Radius:</label>
+        <input type="number"
+               name="radius"
+               formControlName="radius"
+               id="radius">
+    </div>
+    <div class="form-control">
+        <label for="formula">Formula:</label>
+        <select id="formula"
+                formControlName="formula"
+                name="formula">
+            <option value="CosineLaw">CosineLaw</option>
+            <option value="Pythagora">Pythagora</option>
+        </select>
+    </div>
+    <div class="form-control">
+        <label for="unit">Unit:</label>
+        <select id="unit"
+                formControlName="unit"
+                name="unit">
+            <option value="Meter">Meter</option>
+            <option value="Kilometer">Kilometer</option>
+            <option value="Inch">Inch</option>
+            <option value="Foot">Foot</option>
+            <option value="Yard">Yard</option>
+            <option value="Mile">Mile</option>
+            <option value="NauticalMile">NauticalMile</option>
+        </select>
+    </div>
+
+</form>
