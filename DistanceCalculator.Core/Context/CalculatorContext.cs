@@ -24,7 +24,7 @@ public class CalculatorContext : ICalculatorContext
     {
         if (_calculator == null)
         {
-            throw new Exception("Strategy not set. You must call SetStrategy before doing the calculation");
+            throw new Exception("Strategy not set. You must call SetFormula before doing the calculation");
         }
 
         return _calculator.Calculate(start, end, radius);
