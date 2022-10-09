@@ -3,7 +3,7 @@ This application calculates a distance between two coordinates on a sphere with 
 
 The project consists of a .NET 6 Web API and an Angular 14 frontend application.
 
-~~You can check the live app at https://distance.refactor.hr/~~ (The API is currently disabled)
+You can check the live app at https://distance.refactor.hr/
 
 ## Getting started
 
